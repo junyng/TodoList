@@ -14,6 +14,8 @@ func taskReducer(action: Action, state: AppState?) -> AppState {
     switch action {
     case let action as CreateTaskAction:
         state.tasks?.append(action.task)
+    case let action as DeleteTaskAction:
+        state.tasks?.remove(at: action.index)
     default:
         break
     }

@@ -36,7 +36,36 @@ class TasksTableViewController: UITableViewController, StoreSubscriber {
     }
     
     @IBAction private func createButtonTapped(_ sender: UIBarButtonItem) {
-        mainStore.dispatch(CreateTaskAction(task: "to do"))
+        let alertController = UIAlertController(
+            title: "create task",
+            message: nil,
+            preferredStyle: .alert
+        )
+        let defaultAction = UIAlertAction(
+            title: "create",
+            style: .default,
+            handler: { (_) in
+                guard let textField = alertController.textFields?.first,
+                    let task = textField.text else { return }
+                mainStore.dispatch(
+                    CreateTaskAction(task: task)
+                )
+            }
+        )
+        alertController.addAction(defaultAction)
+        alertController.addTextField(configurationHandler: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            mainStore.dispatch(
+                DeleteTaskAction(index: indexPath.row)
+            )
+        }
+    }
 }

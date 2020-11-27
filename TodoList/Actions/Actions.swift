@@ -9,5 +9,9 @@
 import ReSwift
 
 struct CreateTaskAction: Action {
-    var task: String
+    let task: String
+}
+
+struct DeleteTaskAction: Action {
+    let index: Int
 }
