@@ -9,9 +9,17 @@
 import ReSwift
 
 struct CreateTaskAction: Action {
-    let task: String
+    let task: Task
+    
+    init(title: String) {
+        self.task = (title: title, isCompleted: false)
+    }
 }
 
 struct DeleteTaskAction: Action {
+    let index: Int
+}
+
+struct UpdateTaskAction: Action {
     let index: Int
 }

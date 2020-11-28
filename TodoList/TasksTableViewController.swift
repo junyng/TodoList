@@ -29,7 +29,8 @@ class TasksTableViewController: UITableViewController, StoreSubscriber {
         
         if let tasks = mainStore.state.tasks {
             let task = tasks[indexPath.row]
-            cell.textLabel?.text = task
+            cell.textLabel?.text = task.title
+            cell.accessoryType = task.isCompleted ? .checkmark : .none
         }
         
         return cell
@@ -46,15 +47,23 @@ class TasksTableViewController: UITableViewController, StoreSubscriber {
             style: .default,
             handler: { (_) in
                 guard let textField = alertController.textFields?.first,
-                    let task = textField.text else { return }
+                    let title = textField.text else { return }
                 mainStore.dispatch(
-                    CreateTaskAction(task: task)
+                    CreateTaskAction(title: title)
                 )
             }
         )
         alertController.addAction(defaultAction)
         alertController.addTextField(configurationHandler: nil)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        mainStore.dispatch(
+            UpdateTaskAction(
+                index: indexPath.row
+            )
+        )
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -8,6 +8,8 @@
 
 import ReSwift
 
+typealias Task = (title: String, isCompleted: Bool)
+
 struct AppState: StateType {
-    var tasks: [String]? = []
+    var tasks: [Task]? = []
 }
