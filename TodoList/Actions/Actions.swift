@@ -22,4 +22,5 @@ struct DeleteTaskAction: Action {
 
 struct UpdateTaskAction: Action {
     let index: Int
+    let isCompleted: Bool
 }

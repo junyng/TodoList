@@ -17,7 +17,7 @@ func taskReducer(action: Action, state: AppState?) -> AppState {
     case let action as DeleteTaskAction:
         state.tasks?.remove(at: action.index)
     case let action as UpdateTaskAction:
-        state.tasks?[action.index].isCompleted.toggle()
+        state.tasks?[action.index].isCompleted = action.isCompleted
     default:
         break
     }

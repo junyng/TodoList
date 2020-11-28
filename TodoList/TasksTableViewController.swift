@@ -59,9 +59,13 @@ class TasksTableViewController: UITableViewController, StoreSubscriber {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let tasks = mainStore.state.tasks else { return }
+        let task = tasks[indexPath.row]
+        let isTaskCompleted = !task.isCompleted
         mainStore.dispatch(
             UpdateTaskAction(
-                index: indexPath.row
+                index: indexPath.row,
+                isCompleted: isTaskCompleted
             )
         )
     }
