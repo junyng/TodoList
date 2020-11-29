@@ -21,13 +21,13 @@ class TasksTableViewController: UITableViewController, StoreSubscriber {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainStore.state.tasks?.count ?? 0
+        return mainStore.state.tasksState.tasks?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        if let tasks = mainStore.state.tasks {
+        if let tasks = mainStore.state.tasksState.tasks {
             let task = tasks[indexPath.row]
             cell.textLabel?.text = task.title
             cell.accessoryType = task.isCompleted ? .checkmark : .none
@@ -59,7 +59,7 @@ class TasksTableViewController: UITableViewController, StoreSubscriber {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let tasks = mainStore.state.tasks else { return }
+        guard let tasks = mainStore.state.tasksState.tasks else { return }
         let task = tasks[indexPath.row]
         let isTaskCompleted = !task.isCompleted
         mainStore.dispatch(

@@ -14,8 +14,10 @@
 		D867C5C825714BE000D4B344 /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D867C5C725714BE000D4B344 /* ReSwift */; };
 		D867C5CC25714DF300D4B344 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867C5CB25714DF300D4B344 /* TasksTableViewController.swift */; };
 		D867C5CE25715BAA00D4B344 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867C5CD25715BAA00D4B344 /* AppState.swift */; };
-		D867C5D025715BE700D4B344 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867C5CF25715BE700D4B344 /* Actions.swift */; };
+		D867C5D025715BE700D4B344 /* TaskActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867C5CF25715BE700D4B344 /* TaskActions.swift */; };
 		D867C5D225715CEF00D4B344 /* TaskReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867C5D125715CEF00D4B344 /* TaskReducer.swift */; };
+		D867C5EC257361AB00D4B344 /* TasksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867C5EB257361AB00D4B344 /* TasksState.swift */; };
+		D867C5EE257372B700D4B344 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867C5ED257372B700D4B344 /* AppReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,10 @@
 		D867C5C025714A3500D4B344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D867C5CB25714DF300D4B344 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		D867C5CD25715BAA00D4B344 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		D867C5CF25715BE700D4B344 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		D867C5CF25715BE700D4B344 /* TaskActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskActions.swift; sourceTree = "<group>"; };
 		D867C5D125715CEF00D4B344 /* TaskReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReducer.swift; sourceTree = "<group>"; };
+		D867C5EB257361AB00D4B344 /* TasksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksState.swift; sourceTree = "<group>"; };
+		D867C5ED257372B700D4B344 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		D867C5DC2571637B00D4B344 /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
+				D867C5ED257372B700D4B344 /* AppReducer.swift */,
 				D867C5D125715CEF00D4B344 /* TaskReducer.swift */,
 			);
 			path = Reducer;
@@ -86,7 +91,7 @@
 		D867C5DD2571638300D4B344 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				D867C5CF25715BE700D4B344 /* Actions.swift */,
+				D867C5CF25715BE700D4B344 /* TaskActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				D867C5CD25715BAA00D4B344 /* AppState.swift */,
+				D867C5EB257361AB00D4B344 /* TasksState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -177,7 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D867C5CE25715BAA00D4B344 /* AppState.swift in Sources */,
-				D867C5D025715BE700D4B344 /* Actions.swift in Sources */,
+				D867C5D025715BE700D4B344 /* TaskActions.swift in Sources */,
+				D867C5EE257372B700D4B344 /* AppReducer.swift in Sources */,
+				D867C5EC257361AB00D4B344 /* TasksState.swift in Sources */,
 				D867C5CC25714DF300D4B344 /* TasksTableViewController.swift in Sources */,
 				D867C5D225715CEF00D4B344 /* TaskReducer.swift in Sources */,
 				D867C5B325714A2E00D4B344 /* AppDelegate.swift in Sources */,

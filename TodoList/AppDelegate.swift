@@ -10,7 +10,7 @@ import ReSwift
 import UIKit
 
 let mainStore = Store<AppState>(
-    reducer: taskReducer,
+    reducer: appReducer,
     state: nil
 )
 

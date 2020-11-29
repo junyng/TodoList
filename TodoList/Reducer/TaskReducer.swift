@@ -1,5 +1,5 @@
 //
-//  TaskReducer.swift
+//  tasksReducer.swift
 //  TodoList
 //
 //  Created by Cho Junyeong on 2020/11/28.
@@ -8,8 +8,8 @@
 
 import ReSwift
 
-func taskReducer(action: Action, state: AppState?) -> AppState {
-    var state = state ?? AppState()
+func tasksReducer(action: Action, state: TasksState?) -> TasksState {
+    var state = state ?? TasksState()
     
     switch action {
     case let action as CreateTaskAction:
